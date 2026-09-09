@@ -1,0 +1,403 @@
+/* ==========================================================================
+   Altmoz Technology Partners — Shared Styles
+   Inter typeface, monochrome navy derived from logo hex #1D2A3B.
+   ========================================================================== */
+ 
+:root {
+  /* Navy scale — all derived from the exact logo hex, dark to light */
+  --navy-900: #1D2A3B; /* logo hex — primary, headings, nav */
+  --navy-700: #33455C; /* secondary text on dark, hover states */
+  --navy-500: #5A6C82; /* muted headings, links */
+  --navy-200: #C7CFD8; /* borders, dividers */
+  --navy-050: #F0F0F0; /* section backgrounds */
+ 
+  --body-text: #5F5E5A;
+  --bg-white: #FFFFFF;
+ 
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+ 
+  --container-max: 720px; /* keeps line lengths readable at long-scroll widths */
+}
+ 
+* { box-sizing: border-box; }
+ 
+html { scroll-behavior: smooth; }
+ 
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--body-text);
+  background-color: var(--bg-white);
+  line-height: 1.65;
+  margin: 0;
+}
+ 
+h1, h2, h3, h4 {
+  font-family: var(--font-body);
+  font-weight: 800;
+  color: var(--navy-900);
+  line-height: 1.2;
+  margin: 0 0 0.6em 0;
+}
+ 
+h1 { font-size: clamp(2rem, 4vw, 2.75rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h3 { font-size: 1.25rem; }
+ 
+p { margin: 0 0 1.1em 0; max-width: 65ch; }
+ 
+a { color: var(--navy-700); }
+a:hover { color: var(--navy-900); }
+ 
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--navy-900);
+  color: #fff;
+  padding: 0.75em 1.25em;
+  z-index: 1000;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+ 
+/* Visible keyboard focus everywhere */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.accordion-button:focus-visible {
+  outline: 3px solid var(--navy-500);
+  outline-offset: 2px;
+}
+ 
+/* ---- Navbar ---- */
+.site-header {
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--navy-200);
+}
+ 
+.site-header .navbar-brand {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--navy-900);
+  letter-spacing: -0.01em;
+}
+ 
+.site-header .nav-link {
+  font-weight: 600;
+  color: var(--navy-700);
+  padding: 0.5rem 1rem;
+}
+ 
+.site-header .nav-link.active,
+.site-header .nav-link:hover {
+  color: var(--navy-900);
+}
+ 
+/* ---- Sections ---- */
+.section {
+  padding: clamp(3rem, 8vw, 5.5rem) 1.25rem;
+}
+ 
+.section-alt {
+  background-color: var(--navy-050);
+}
+ 
+.section-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+ 
+/* ---- Buttons ---- */
+.btn-navy {
+  background-color: var(--navy-900);
+  border: 1px solid var(--navy-900);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  transition: background-color 0.15s ease;
+}
+ 
+.btn-navy:hover,
+.btn-navy:focus {
+  background-color: var(--navy-700);
+  color: #fff;
+}
+ 
+.btn-outline-navy {
+  background-color: transparent;
+  border: 1px solid var(--navy-900);
+  color: var(--navy-900);
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+ 
+.btn-outline-navy:hover,
+.btn-outline-navy:focus {
+  background-color: var(--navy-900);
+  color: #fff;
+}
+ 
+/* ---- Footer ---- */
+.site-footer {
+  background-color: var(--navy-900);
+  color: var(--navy-200);
+  padding: 2.5rem 1.25rem;
+}
+ 
+.footer-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+}
+ 
+.site-footer .footer-disclaimer {
+  grid-column: 2;
+  justify-self: start;
+  text-align: left;
+  font-size: 0.85rem;
+  color: var(--navy-200);
+  margin: 0;
+}
+ 
+.site-footer .footer-contact {
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+ 
+@media (max-width: 767.98px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: 1rem;
+  }
+  .site-footer .footer-contact {
+    align-items: flex-start;
+  }
+}
+ 
+.site-footer a {
+  color: #fff;
+}
+ 
+.site-footer .footer-logo {
+  grid-column: 1;
+  justify-self: start;
+  height: 32px;
+  width: auto;
+}
+ 
+/* ---- Accordion (FAQ) ---- */
+.accordion-item {
+  border: 1px solid var(--navy-200);
+  border-radius: 4px !important;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+ 
+.accordion-button {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--navy-900);
+  background-color: var(--bg-white);
+  padding: 1.15rem 1.25rem;
+}
+ 
+.accordion-button:not(.collapsed) {
+  color: var(--navy-900);
+  background-color: var(--navy-050);
+  box-shadow: none;
+}
+ 
+.accordion-button::after {
+  filter: brightness(0) saturate(100%) invert(14%) sepia(24%) saturate(1220%) hue-rotate(178deg) brightness(94%) contrast(92%);
+}
+ 
+.accordion-body {
+  padding: 0.25rem 1.25rem 1.25rem 1.25rem;
+}
+ 
+.accordion-body p:last-child {
+  margin-bottom: 0;
+}
+ 
+/* ---- Forms (Get Started) ---- */
+.form-label {
+  font-weight: 600;
+  color: var(--navy-900);
+  margin-bottom: 0.4rem;
+}
+ 
+.form-control,
+.form-select {
+  border: 1px solid var(--navy-200);
+  border-radius: 4px;
+  padding: 0.65rem 0.85rem;
+  color: var(--navy-900);
+}
+ 
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--navy-500);
+  box-shadow: 0 0 0 0.2rem rgba(90, 108, 130, 0.2);
+}
+ 
+.form-check-input:checked {
+  background-color: var(--navy-900);
+  border-color: var(--navy-900);
+}
+ 
+.form-check-label {
+  color: var(--body-text);
+}
+ 
+/* Honeypot field — hidden from real users, left in the DOM for bots */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+ 
+.divider-or {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.5rem 0;
+  color: var(--navy-500);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+ 
+.divider-or::before,
+.divider-or::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--navy-200);
+}
+ 
+.phone-callout {
+  text-align: center;
+}
+ 
+.phone-callout .phone-number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--navy-900);
+}
+ 
+.phone-callout .phone-number a {
+  color: inherit;
+  text-decoration: none;
+}
+ 
+.phone-callout .phone-number a:hover,
+.phone-callout .phone-number a:focus-visible {
+  text-decoration: underline;
+}
+ 
+/* ---- Process graphic (How It Works) ---- */
+.process-graphic {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin-top: 1.5rem;
+  display: block;
+}
+ 
+/* ---- Partner logo card (Abilita, Our Team) ---- */
+.partner-logo-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--navy-200);
+  border-radius: 8px;
+  padding: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+ 
+.partner-logo {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* On mobile the card stacks full-width; cap and center it so the
+   small logo doesn't float in an oversized empty box. */
+@media (max-width: 767.98px) {
+  .partner-logo-card {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+ 
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}
+ 
+/* ---- Floating contact badge: call + book ---- */
+.contact-badge {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: stretch;
+  background-color: var(--navy-900);
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(29, 42, 59, 0.35);
+  overflow: hidden;
+  z-index: 999;
+}
+ 
+.contact-badge a {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.85rem 1.25rem;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+  white-space: nowrap;
+}
+ 
+.contact-badge a:hover,
+.contact-badge a:focus-visible {
+  background-color: var(--navy-700);
+}
+ 
+.contact-badge .badge-divider {
+  width: 1px;
+  align-self: center;
+  height: 1.4rem;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+ 

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Started — Altmoz Technology Partners</title>
+  <meta name="description" content="Get started with Altmoz Technology Partners: answer a few quick questions, book a call, or reach us directly.">
+ 
+  <!-- Bootstrap CDN (no build pipeline) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+  <!-- Inter typeface -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+ 
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+ 
+  <a class="skip-link" href="#main">Skip to main content</a>
+ 
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md container py-3" aria-label="Main navigation">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/altmoz-logo-color.png" alt="Altmoz Technology Partners" height="52">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="how-it-works.html">How It Works</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="get-started.html">Get Started</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+ 
+  <main id="main">
+ 
+    <!-- ============ FRAMING ============ -->
+    <section class="section">
+      <div class="section-inner">
+        <h1>Get Started</h1>
+        <p>You've already heard from us — let's make it official. Altmoz Technology Partners is a vendor-neutral advisor with experience as a former State Farm team member*. We're compensated by the provider you choose - there is no cost to you. Ready to move forward? Here's how.</p>
+        <p><small>*Altmoz Technology Partners is not affiliated with State Farm and claims no endorsement from the company.</small></p>
+      </div>
+    </section>
+ 
+    <!-- ============ PRIMARY PATH — FORM ============ -->
+    <section class="section section-alt">
+      <div class="section-inner">
+        <h2>Answer these easy questions to get started right away</h2>
+ 
+        <form action="https://formspree.io/f/maeyldrv" method="POST" novalidate>
+ 
+          <!-- Honeypot field — hidden from real users, catches bots -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="_gotcha">Leave this field blank</label>
+            <input type="text" name="_gotcha" id="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+ 
+          <div class="row g-3">
+ 
+            <div class="col-12 col-md-6">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+ 
+            <div class="col-12 col-md-6">
+              <label for="agency-phone" class="form-label">Agency phone number</label>
+              <input type="tel" class="form-control" id="agency-phone" name="agency_phone" required>
+            </div>
+ 
+            <div class="col-12 col-md-6">
+              <label for="email" class="form-label">Best email</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+ 
+            <div class="col-12 col-md-6">
+              <label for="contact-pref" class="form-label">How would you like us to reach you?</label>
+              <select class="form-select" id="contact-pref" name="contact_preference" required>
+                <option value="" selected disabled>Choose one</option>
+                <option value="Call you">Call you</option>
+                <option value="Email only">Email only</option>
+              </select>
+            </div>
+ 
+            <div class="col-12">
+              <label for="office-address" class="form-label">Office address (to help us determine local providers)</label>
+              <input type="text" class="form-control" id="office-address" name="office_address" required>
+            </div>
+ 
+            <div class="col-12 col-md-6">
+              <label for="office-size" class="form-label">Office size (number of team members)</label>
+              <input type="number" class="form-control" id="office-size" name="office_size" min="1" required>
+            </div>
+ 
+            <div class="col-12 col-md-6">
+              <label class="form-label d-block">Are you the only agent at your location?</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="only_agent" id="only-agent-yes" value="Yes" required>
+                <label class="form-check-label" for="only-agent-yes">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="only_agent" id="only-agent-no" value="No">
+                <label class="form-check-label" for="only-agent-no">No</label>
+              </div>
+            </div>
+ 
+          </div>
+ 
+          <div class="mt-4">
+            <button type="submit" class="btn btn-navy">Submit</button>
+          </div>
+ 
+        </form>
+ 
+        <div class="divider-or">or</div>
+ 
+        <!-- ============ SCHEDULING LINK ============ -->
+        <div>
+          <h2>Prefer to just get on the calendar?</h2>
+          <p>Book an appointment directly, without filling out the form.</p>
+ 
+          <!-- Calendly inline widget begin -->
+          <div class="calendly-inline-widget" data-url="https://calendly.com/peter-altmoz/agent-assessment?hide_gdpr_banner=1" data-resize="true" style="min-width:320px;height:700px;"></div>
+          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+          <!-- Calendly inline widget end -->
+        </div>
+ 
+        <div class="divider-or">or</div>
+ 
+        <!-- ============ PHONE NUMBER ============ -->
+        <div class="phone-callout">
+          <h2>Skip the form and call us now</h2>
+          <p class="phone-number"><a href="tel:+17204492207">(720) 449-2207</a></p>
+        </div>
+ 
+      </div>
+    </section>
+ 
+    <!-- ============ WHAT HAPPENS AFTER ============ -->
+    <section class="section">
+      <div class="section-inner">
+        <h2>What happens after</h2>
+        <p>After a quick assessment to understand your office's needs, we research providers, request quotes, and bring you options. You make the call on what fits — we handle the legwork and help you get ready for install.</p>
+      </div>
+    </section>
+ 
+  </main>
+ 
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <img src="images/altmoz-logo-white.png" alt="Altmoz Technology Partners" class="footer-logo">
+      <p class="footer-disclaimer">
+        Altmoz Technology Partners is not affiliated with State Farm and claims no endorsement from the company.
+      </p>
+      <div class="footer-contact">
+        <a href="tel:+17204492207">(720) 449-2207</a>
+        <a href="https://calendly.com/peter-altmoz/agent-assessment">book me</a>
+      </div>
+    </div>
+  </footer>
+ 
+  <div class="contact-badge">
+    <a href="tel:+17204492207">call me</a>
+    <span class="badge-divider"></span>
+    <a href="https://calendly.com/peter-altmoz/agent-assessment">book me</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+ 
