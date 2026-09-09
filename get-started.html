@@ -247,7 +247,22 @@
     <span class="badge-divider"></span>
     <a href="https://calendly.com/peter-altmoz/agent-assessment">book me</a>
   </div>
-
+<script>
+  function capitalizeName(input) {
+    input.addEventListener('input', function (e) {
+      const cursorPos = e.target.selectionStart;
+      const value = e.target.value;
+      const capitalized = value.replace(/(^|\s)([a-z])/g, (match, sep, char) => sep + char.toUpperCase());
+      if (capitalized !== value) {
+        e.target.value = capitalized;
+        e.target.setSelectionRange(cursorPos, cursorPos);
+      }
+    });
+  }
+  ['first-name', 'last-name'].forEach(function (id) {
+    capitalizeName(document.getElementById(id));
+  });
+</script>
 <script>
   const phoneInput = document.getElementById('phone');
   phoneInput.addEventListener('input', function (e) {
